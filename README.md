@@ -1,3 +1,15 @@
+Steps:
+
+1. Create a new repo called DropDown-jyroo 
+2. mkdir DropDown-jyroo
+3. cd DropDown-jyroo
+4. git clone https://github.com/AssistoLab/DropDown.git .
+5. git remote rename origin upstream
+6. git remote add origin https://github.com/ramjyroo/DropDown-jyroo.git
+7. git push origin master
+
+
+
 ![DropDown](Screenshots/logo.png)
 
 [![Twitter: @kevinh6113](http://img.shields.io/badge/contact-%40kevinh6113-70a1fb.svg?style=flat)](https://twitter.com/kevinh6113)
