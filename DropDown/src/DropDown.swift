@@ -72,6 +72,10 @@ public final class DropDown: UIView {
 		case bottom
 
 	}
+    
+    public var dropDownHeight: CGFloat = 0.0 {
+        didSet { setNeedsUpdateConstraints() }
+    }
 
 	//MARK: - Properties
 
@@ -1018,9 +1022,16 @@ extension DropDown {
 	}
 
 	/// Returns the height needed to display all cells.
-	fileprivate var tableHeight: CGFloat {
-		return tableView.rowHeight * CGFloat(dataSource.count)
-	}
+//	fileprivate var tableHeight: CGFloat {
+//		return tableView.rowHeight * CGFloat(dataSource.count)
+//	}
+    fileprivate var tableHeight: CGFloat {
+        if dropDownHeight == 0.0 {
+            return tableView.rowHeight * CGFloat(dataSource.count)
+        } else {
+            return dropDownHeight
+        }
+    }
 
     //MARK: Objective-C methods for converting the Swift type Index
 	@objc public func selectRow(_ index: Int, scrollPosition: UITableView.ScrollPosition = .none) {
