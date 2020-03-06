@@ -10,6 +10,7 @@ import UIKit
 
 public typealias Index = Int
 public typealias Closure = () -> Void
+public typealias AllowSelectionClosure = (Index) -> Bool
 public typealias SelectionClosure = (Index, String) -> Void
 public typealias MultiSelectionClosure = ([Index], [String]) -> Void
 public typealias ConfigurationClosure = (Index, String) -> String
@@ -366,6 +367,14 @@ public final class DropDown: UIView {
 			reloadAllComponents()
 		}
 	}
+    
+    public var cellClass: DropDownCustomCell.Type = DropDownCustomCell.self {
+        didSet {
+            tableView.register(cellClass, forCellReuseIdentifier: DPDConstant.ReusableIdentifier.DropDownCell)
+            templateCell = nil
+            reloadAllComponents()
+        }
+    }
 	
 	//MARK: Content
 
@@ -406,6 +415,9 @@ public final class DropDown: UIView {
 		didSet { reloadAllComponents() }
 	}
     
+    
+    
+    
     /**
      A advanced formatter for the cells. Allows customization when custom cells are used
      
@@ -414,6 +426,9 @@ public final class DropDown: UIView {
     public var customCellConfiguration: CellConfigurationClosure? {
         didSet { reloadAllComponents() }
     }
+    
+    /// Closure to decide is a row can be selected or now
+    public var allowSelection: AllowSelectionClosure?
 
 	/// The action to execute when the user selects a cell.
 	public var selectionAction: SelectionClosure?
@@ -1084,13 +1099,32 @@ extension DropDown: UITableViewDataSource, UITableViewDelegate {
 		} else {
 			cell.optionLabel.text = dataSource[index]
 		}
-		
-		customCellConfiguration?(index, dataSource[index], cell)
+        if let customCellConfig = customCellConfiguration {
+            print("index: \(index) text color before custom config: \(cell.optionLabel.textColor.cgColor.components)")
+            customCellConfig(index, dataSource[index], cell)
+            print("index: \(index) text color after custom config: \(cell.optionLabel.textColor.cgColor.components)")
+        }
 	}
 
 	public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.isSelected = selectedRowIndices.first{ $0 == (indexPath as NSIndexPath).row } != nil
 	}
+    
+    public func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if let allowSelection = self.allowSelection {
+            return allowSelection(indexPath.row) ? indexPath: nil
+        } else {
+            return indexPath
+        }
+    }
+    
+    public func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        if let allowSelection = self.allowSelection {
+            return allowSelection(indexPath.row)
+        } else {
+            return true
+        }
+    }
 
 	public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let selectedRowIndex = (indexPath as NSIndexPath).row

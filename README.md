@@ -209,6 +209,18 @@ dropDown.customCellConfiguration = { (index: Index, item: String, cell: DropDown
 
 For a complete example, don't hesitate to check the demo app and code.
 
+#### Custom cell programmatically without NIBs
+
+You can also create your own custom cell, without any xib file. 
+For this you have to:
+
+```
+// Source based - https://github.com/AssistoLab/DropDown/pull/213
+//To avoid NIBs use the following - where CellClassName is subclass of DropDownCustomCell.
+dropDown.cellClass = CellClassName.self
+
+```
+
 ### Events
 
 ```swift

@@ -68,7 +68,14 @@ class ViewController: UIViewController {
 		}
 	}
 	
-	@IBAction func changeDirection(_ sender: UISegmentedControl) {
+    @IBAction func showProgrammatic(_ sender: Any) {
+        guard let nvc = self.navigationController else {
+            return
+        }
+        let pvc = ProgrammaticViewController()
+        nvc.pushViewController(pvc, animated: true)
+    }
+    @IBAction func changeDirection(_ sender: UISegmentedControl) {
 		switch sender.selectedSegmentIndex {
 		case 0: dropDowns.forEach { $0.direction = .any }
 		case 1: dropDowns.forEach { $0.direction = .bottom }

@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6vj-VF-JaB">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6vj-VF-JaB">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Fqn-ZE-M5e"/>
                     </layoutGuides>
                     <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="lH9-eW-CtL">
-                        <rect key="frame" x="0.0" y="64" width="600" height="636"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="656"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1" horizontalCompressionResistancePriority="250" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0B-sh-55C" customClass="NiceButton" customModule="Demo" customModuleProvider="target">
@@ -55,7 +51,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Options" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJF-wb-wuG">
-                                <rect key="frame" x="20" y="204" width="77.5" height="26"/>
+                                <rect key="frame" x="20" y="204" width="75.5" height="26"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -67,7 +63,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="SPc-ge-GiP">
-                                <rect key="frame" x="20" y="298.5" width="540" height="29"/>
+                                <rect key="frame" x="20" y="298.5" width="540" height="32"/>
                                 <segments>
                                     <segment title="Auto"/>
                                     <segment title="On Tap"/>
@@ -89,13 +85,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Direction (of the dropdown, any: below anchor view if possible, otherwise, above)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sxf-NX-PA6">
-                                <rect key="frame" x="20" y="346.5" width="540" height="40.5"/>
+                                <rect key="frame" x="20" y="349.5" width="540" height="40.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="evd-34-0pX">
-                                <rect key="frame" x="20" y="395" width="540" height="29"/>
+                                <rect key="frame" x="20" y="398" width="540" height="32"/>
                                 <segments>
                                     <segment title="Any"/>
                                     <segment title="Bottom"/>
@@ -106,7 +102,7 @@
                                 </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aXM-aw-Gwc">
-                                <rect key="frame" x="20" y="431" width="540" height="29"/>
+                                <rect key="frame" x="20" y="437" width="540" height="32"/>
                                 <segments>
                                     <segment title="Basic DropDown UI"/>
                                     <segment title="Example of custom UI"/>
@@ -116,14 +112,14 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhl-iV-Oh8">
-                                <rect key="frame" x="20" y="467" width="106" height="30"/>
+                                <rect key="frame" x="20" y="476" width="106" height="30"/>
                                 <state key="normal" title="Show keyboard"/>
                                 <connections>
                                     <action selector="showKeyboard:" destination="0v1-k3-K39" eventType="touchUpInside" id="zSf-f9-3io"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't forget to test the orientation! (even with a drop down displayed)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajN-P2-z3O">
-                                <rect key="frame" x="20" y="509" width="540" height="19.5"/>
+                                <rect key="frame" x="20" y="518" width="540" height="19.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -171,6 +167,11 @@
                         </connections>
                     </scrollView>
                     <navigationItem key="navigationItem" title="DropDown" id="0mV-mU-nOt">
+                        <barButtonItem key="leftBarButtonItem" title="Programmatic" id="J8e-RV-dUD">
+                            <connections>
+                                <action selector="showProgrammatic:" destination="0v1-k3-K39" id="sV1-ln-y12"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="•••" id="UAB-ZP-MMT">
                             <connections>
                                 <action selector="showBarButtonDropDown:" destination="0v1-k3-K39" id="LJc-Jl-e4e"/>
@@ -203,7 +204,7 @@
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="nbq-CX-E1j">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
