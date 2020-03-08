@@ -159,9 +159,8 @@ class ProgrammaticViewController: UIViewController {
             self.chooseTopicButton.setTitle(array[index], for: .normal)
         }
         
-        self.topicDropDown.allowSelection = { (index) -> Bool in
+        self.topicDropDown.allowSelection = { (index, value) -> Bool in
             print("topicDropDown - allowSelection - index: \(index)")
-            let value = array[index]
             if disabled.contains(value) {
                 return false
             } else {

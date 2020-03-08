@@ -10,7 +10,7 @@ import UIKit
 
 public typealias Index = Int
 public typealias Closure = () -> Void
-public typealias AllowSelectionClosure = (Index) -> Bool
+public typealias AllowSelectionClosure = (Index, String) -> Bool
 public typealias SelectionClosure = (Index, String) -> Void
 public typealias MultiSelectionClosure = ([Index], [String]) -> Void
 public typealias ConfigurationClosure = (Index, String) -> String
@@ -1112,7 +1112,8 @@ extension DropDown: UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         if let allowSelection = self.allowSelection {
-            return allowSelection(indexPath.row) ? indexPath: nil
+            let index = indexPath.row
+            return allowSelection(index, dataSource[index]) ? indexPath: nil
         } else {
             return indexPath
         }
@@ -1120,7 +1121,8 @@ extension DropDown: UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         if let allowSelection = self.allowSelection {
-            return allowSelection(indexPath.row)
+            let index = indexPath.row
+            return allowSelection(index, dataSource[index])
         } else {
             return true
         }
