@@ -1100,9 +1100,9 @@ extension DropDown: UITableViewDataSource, UITableViewDelegate {
 			cell.optionLabel.text = dataSource[index]
 		}
         if let customCellConfig = customCellConfiguration {
-            print("index: \(index) text color before custom config: \(cell.optionLabel.textColor.cgColor.components)")
+            //print("index: \(index) text color before custom config: \(cell.optionLabel.textColor.cgColor.components)")
             customCellConfig(index, dataSource[index], cell)
-            print("index: \(index) text color after custom config: \(cell.optionLabel.textColor.cgColor.components)")
+            //print("index: \(index) text color after custom config: \(cell.optionLabel.textColor.cgColor.components)")
         }
 	}
 
